@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="popup.js"></script>
+	<script>
+	  $(document).ready(function() {
+		actualizarReloj();
+	  });
+	</script>
+	<title>Aviator Predictor - Dashboard</title>
+	<style>
+body {
+    background-color: #020101;
+    background-image: url("fondo.png");
+    background-size: 391px 691px;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #FFFFFF;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    text-align: center;
+}
+.contenedor {
+    position: relative;
+    height: 791px; /* ajusta la altura del contenedor para mover la imagen hacia abajo */
+}
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+input[type="text"] {
+    padding: 10px;
+    border-radius: 25px;
+    border: none;
+    width: 53px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    background-color: #0331ff;
+    color: #1de949;
+    box-shadow: 0px 0px 10px 0px #e9911d;
+    transition: all 0.2s ease-in-out;
+}
+input[type="text"]:focus {
+outline: none;
+background-color: #000000;
+box-shadow: 0px 0px 10px 0px #08f700;
+}
+
+input[type="text"]::placeholder {
+color: #ffffff;
+}
+button[type="submit"] {
+background-color: #1b438d;
+border: none;
+padding: 10px;
+border-radius: 5px;
+color: white;
+font-size: 16px;
+cursor: pointer;
+margin-top: 10px;
+font-family: Arial, sans-serif;
+font-weight: bold;
+text-transform: uppercase;
+transition: all 0.2s ease-in-out; /* añade una transición para suavizar el efecto futurista */
+}
+button[type="submit"]:hover {
+background-color: #00c410;
+color: #0074D9;
+box-shadow: 0px 0px 5px 0px #0074D9;
+}
+#reloj{
+font-size: 50px;
+margin-top: 30px;
+font-weight: bold;
+color: rgb(5, 6, 15);
+}
+</style>
+</head>
+<body>
+	<div class="contenedor">
+		<div class="center">
+			<div id="reloj"></div>
+			<div style="height: 200px;"></div> <!-- agregar espacio en blanco para mover el contenido hacia abajo -->
+			<input type="text" placeholder="Cuota"><br>
+			<div style="height: 50px;"></div> <!-- agregar más espacio en blanco -->
+			<button type="submit">PREDECIR</button>
+	</div>
+  </div>	  
+</body>
+</html>
+</head>
+</script>
+<script>
+$(document).ready(function(){
+    $("button[type='submit']").click(function(){
+        var resultado_anterior = $("input[type='text']").val();
+        var resultados_anteriores = ["4.53x", "1.00x", "1.00x", "1.01x", "26.81x", "1.57x", "6.63x", "1.39x", "1.03x", "1.00x", "3.14x", "3.11x", "1.39x", "2.14x", "1.26x", "8.76x", "1.68x", "3.40x", "6.15x", "1.94x", "5.93x", "3.34x", "1.32x", "1.47x", "4.26x", "2.13x", "1.58x", "1.98x", "3.93x", "2.54x", "2.47x", "13.71x", "1.07x", "5.44x", "2.81x", "14.92x", "1.15x", "1.48x", "2.82x", "1.83x", "1.04x", "12.70x", "2.48x", "1.28x", "1.36x", "1.18x", "1.05x", "1.88x", "1.41x", "1.59x", "2.37x", "1.02x", "1.98x", "1.31x", "1.04x", "4.99x", "3.05x", "1.43x", "4.26x",];
+        var resultado_correspondiente = resultados_anteriores[resultados_anteriores.indexOf(resultado_anterior) - 1];
+        alert("⚠️ Cuota Anterior " + resultado_anterior + " ⏭️ Predicción: ⏱️ Cuota de Retiro: " + resultado_correspondiente);
+    });
+});
+</script>    
+</script>
